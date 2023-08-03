@@ -1,0 +1,85 @@
+<aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <% if(theme.customize.avatar) { %>
+            <div class="profile avatar"></div>
+        <% } %>
+        <% if(theme.customize.mention) { %>
+            <div class="profile mention-wrap">
+                <p><%= theme.customize.mention %></p>
+            </div>
+            <% } %>
+            <div class="profile social-wrap">
+                <ul class="social-links">
+                    <% for (var i in theme.customize.social_links) { %>
+                        <% if (theme.customize.social_links[i]) { %>
+                        <li>
+                            <a class="social-tooltip" title="<%= i %>" href="<%- url_for(theme.customize.social_links[i]) %>" target="_blank" rel="noopener">
+                                <i class="fa-brands fa-<%= i %>"></i>
+                            </a>
+                        </li>
+                        <% } %>
+                    <% } %>
+                    <li>
+                        <a class="social-tooltip" title="heart" href="<%- url_for() %>" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social-tooltip" title="smile" href="<%- url_for() %>" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-face-smile"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social-tooltip" title="smile" href="<%- url_for() %>" target="_blank" rel="noopener">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social-tooltip" title="smile" href="<%- url_for() %>" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-face-smile"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social-tooltip" title="smile" href="<%- url_for() %>" target="_blank" rel="noopener">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social-tooltip" title="smile" href="<%- url_for() %>" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-face-smile"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        <div id="countWrap" class="profile count-wrap">
+            <i class="icon fa fa-folder-open"></i>
+            <span>전체 글 수 </span>
+            <span class="total"><%= site.posts.length %> 개</span>
+        </div>
+    </div>
+    <!-- <div class="sidebar-top">
+        <p><%= __('sidebar.follow') %>:</p>
+        <ul class="social-links">
+            <% for (var i in theme.customize.social_links) { %>
+                <% if (theme.customize.social_links[i]) { %>
+                <li>
+                    <a class="social-tooltip" title="<%= i %>" href="<%- url_for(theme.customize.social_links[i]) %>" target="_blank" rel="noopener">
+                        <i class="icon fa fa-<%= i %>"></i>
+                    </a>
+                </li>
+                <% } %>
+            <% } %>
+        </ul>
+    </div> -->
+    <!-- <% if (is_post()) { %>
+        <%- partial('post/nav', {post: page}) %>
+    <% } %> -->
+    <div class="widgets-container">
+        <% if (theme.widgets) { %>
+            <% theme.widgets.forEach(function(widget) { %>
+                <%- partial('widget/' + widget, {post: page}) %>
+            <% }) %>
+        <% } %>
+    </div>
+</aside>

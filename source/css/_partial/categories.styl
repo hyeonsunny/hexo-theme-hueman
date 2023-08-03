@@ -1,0 +1,36 @@
+#widget-category
+    .category-list
+        .category-list-item
+            margin: 0 0
+            border: none
+            a
+                display: inline-block
+                width: 100%
+                margin: 0.5rem 0;
+                padding: 0.25rem 0;
+                color: color-theme
+                font-size: 1.563em
+                font-weight: 300
+                border-bottom: 1px solid #5f6365
+                &:before
+                    content: ""
+                    margin: 0
+            .category-list-count
+                display: none;
+            .category-list-child
+                margin: 0
+                .category-list-item
+                    a
+                        display: inline
+                        margin: 0 0
+                        color: #fff
+                        // color: #fff2cc
+                        font-size: 1.05em
+                        font-weight: 200
+                        border: none
+                        &:hover
+                            // color: color-sidebar-text-dark
+                            text-decoration: underline
+                    .category-list-count
+                        display: inline
+                        
